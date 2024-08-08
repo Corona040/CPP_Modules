@@ -1,0 +1,19 @@
+NAME = flagTrap
+
+CFLAG = -Wall -Wextra -Werror -Wshadow -std=c++98
+
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FlagTrap.cpp
+
+all: $(NAME)
+
+$(NAME): $(SRC)
+	c++ -o $@ $^ $(CFLAG)
+
+clean:
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
