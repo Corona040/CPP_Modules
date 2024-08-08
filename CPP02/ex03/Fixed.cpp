@@ -58,49 +58,49 @@ float	Fixed::toFloat(void) const {
 
 /* ************************************************************************** */
 
-bool	(Fixed::operator>)(const Fixed &rhs) {
+bool	(Fixed::operator>)(const Fixed &rhs) const {
 	return (this->getRawBits() > rhs.getRawBits());
 }
 
-bool	(Fixed::operator<)(const Fixed &rhs) {
+bool	(Fixed::operator<)(const Fixed &rhs) const {
 	return (this->getRawBits() < rhs.getRawBits());
 }
 
-bool	(Fixed::operator>=)(const Fixed &rhs) {
+bool	(Fixed::operator>=)(const Fixed &rhs) const {
 	return (this->getRawBits() >= rhs.getRawBits());
 }
 
-bool	(Fixed::operator<=)(const Fixed &rhs) {
+bool	(Fixed::operator<=)(const Fixed &rhs) const {
 	return (this->getRawBits() <= rhs.getRawBits());
 }
 
-bool	(Fixed::operator==)(const Fixed &rhs) {
+bool	(Fixed::operator==)(const Fixed &rhs) const {
 	return (this->getRawBits() == rhs.getRawBits());
 }
 
-bool	(Fixed::operator!=)(const Fixed &rhs) {
+bool	(Fixed::operator!=)(const Fixed &rhs) const {
 	return (this->getRawBits() != rhs.getRawBits());
 }
 
-Fixed	(Fixed::operator+)(const Fixed &rhs) {
+Fixed	(Fixed::operator+)(const Fixed &rhs) const {
 	Fixed result;
 	result.setRawBits(this->getRawBits() + rhs.getRawBits());
 	return (result);
 }
 
-Fixed	(Fixed::operator-)(const Fixed &rhs) {
+Fixed	(Fixed::operator-)(const Fixed &rhs) const {
 	Fixed result;
 	result.setRawBits(this->getRawBits() - rhs.getRawBits());
 	return (result);
 }
 
-Fixed	(Fixed::operator*)(const Fixed &rhs) {
+Fixed	(Fixed::operator*)(const Fixed &rhs) const {
 	Fixed result;
 	result = Fixed(this->toFloat() * rhs.toFloat());
 	return (result);
 }
 
-Fixed	(Fixed::operator /)(const Fixed &rhs) {
+Fixed	(Fixed::operator /)(const Fixed &rhs) const {
 	Fixed result;
 	result = Fixed(this->toFloat() / rhs.toFloat());
 	return (result);

@@ -11,8 +11,8 @@ class Point {
 		Point &(operator=)(const Point &p);
 		~Point(void);
 
-		const Fixed &getx(void);
-		const Fixed &gety(void);
+		const Fixed &getx(void) const;
+		const Fixed &gety(void) const;
 
 	private:
 		const Fixed	x;
