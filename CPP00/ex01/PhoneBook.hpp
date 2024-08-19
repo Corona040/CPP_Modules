@@ -10,8 +10,8 @@ class PhoneBook {
 		PhoneBook &(operator=)(PhoneBook const &rhs);
 		~PhoneBook(void);
 
-	Contact	contacts[8];
-	size_t	current_idx;
+		Contact	contacts[8];
+		size_t	current_idx;
 };
 
 #endif
