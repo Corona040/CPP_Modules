@@ -1,5 +1,4 @@
 #include "FlagTrap.hpp"
-#include <iostream>
 
 FlagTrap::FlagTrap(const std::string n): ClapTrap(n) {
 	std::cout << "FlagTrap Default constructor called" << std::endl;

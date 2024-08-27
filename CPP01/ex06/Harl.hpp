@@ -1,7 +1,8 @@
 #ifndef HARL_H
 # define HARL_H
 
-#include <string>
+# include <string>
+# include <iostream>
 
 class Harl {
 	public:

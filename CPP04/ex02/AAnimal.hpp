@@ -1,7 +1,8 @@
 #ifndef AANIMAL_H
 # define AANIMAL_H
 
-#include <string>
+# include <string>
+# include <iostream>
 
 class AAnimal {
 	public:

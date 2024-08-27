@@ -1,5 +1,4 @@
 #include "ClapTrap.hpp"
-#include <iostream>
 
 
 ClapTrap::ClapTrap(const std::string n): name(n), hp(10), ep(10), ad(0) {

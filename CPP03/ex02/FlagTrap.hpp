@@ -1,7 +1,7 @@
 #ifndef FLAGTRAP_H
 # define FLAGTRAP_H
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class FlagTrap: public ClapTrap {
 	public:

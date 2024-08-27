@@ -1,7 +1,8 @@
 #ifndef BRAIN_H
 # define BRAIN_H
 
-#include <string>
+# include <string>
+# include <iostream>
 
 class Brain {
 	public:

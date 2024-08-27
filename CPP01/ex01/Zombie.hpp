@@ -1,7 +1,8 @@
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
+# include <string>
+# include <iostream>
 
-#include <string>
 class Zombie {
 	public:
 		Zombie(void);

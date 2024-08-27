@@ -1,8 +1,9 @@
 #ifndef HUMANA_H
 # define HUMANA_H
 
-#include <string>
-#include "Weapon.hpp"
+# include <string>
+# include <iostream>
+# include "Weapon.hpp"
 
 class HumanA {
 	public:

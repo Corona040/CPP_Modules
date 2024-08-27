@@ -1,9 +1,8 @@
 #ifndef DIAMONDTRAP_H
 # define DIAMONDTRAP_H
 
-#include "ScavTrap.hpp"
-#include "FlagTrap.hpp"
-#include <string>
+# include "ScavTrap.hpp"
+# include "FlagTrap.hpp"
 
 class DiamondTrap: public ScavTrap, public FlagTrap {
 	public:

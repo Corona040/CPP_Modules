@@ -1,5 +1,4 @@
 #include "Animal.hpp"
-#include <iostream>
 
 Animal::Animal(void): type("") {
 	std::cout << "Animal base Default Constructor called" << std::endl;

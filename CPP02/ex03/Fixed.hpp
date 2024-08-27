@@ -1,7 +1,8 @@
 #ifndef FIXED_H
 # define FIXED_H
 
-#include <iostream>
+# include <iostream>
+# include <ostream>
 
 class Fixed {
 	public:

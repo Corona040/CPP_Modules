@@ -1,5 +1,4 @@
 #include "DiamondTrap.hpp"
-#include <iostream>
 
 DiamondTrap::DiamondTrap(std::string n): ClapTrap(n), ScavTrap(n), FlagTrap(n) {
 	std::cout << "DiamondTrap Default constructor called" << std::endl;

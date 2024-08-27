@@ -1,5 +1,4 @@
 #include "Dog.hpp"
-#include <iostream>
 
 Dog::Dog(void): Animal() {
 	std::cout << "Dog Derived Default Constructor called" << std::endl;

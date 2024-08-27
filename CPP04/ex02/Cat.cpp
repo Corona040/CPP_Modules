@@ -1,5 +1,4 @@
 #include "Cat.hpp"
-#include <iostream>
 
 Cat::Cat(void): AAnimal() {
 	std::cout << "Cat Derived Default Constructor called" << std::endl;
