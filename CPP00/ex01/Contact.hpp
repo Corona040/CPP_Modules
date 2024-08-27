@@ -1,6 +1,6 @@
 #ifndef CONTACT_H
 # define CONTACT_H
-#include <string>
+# include <string>
 
 class Contact {
 	public:
