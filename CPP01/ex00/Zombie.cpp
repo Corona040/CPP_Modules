@@ -1,6 +1,4 @@
 #include "Zombie.hpp"
-#include <iostream>
-#include <string>
 
 Zombie::Zombie(std::string name): name(name) {};
 
