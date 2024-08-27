@@ -14,8 +14,19 @@ std::string &replace_ws(std::string &str) {
 	return (str);
 }
 
+bool	all_ws(std::string &str) {
+	bool	all_ws = true;
+
+	for (size_t i = 0; i < str.length(); i++) {
+		all_ws = all_ws && std::isspace(str[i]);
+		if (!all_ws)
+			break;
+	}
+	return (all_ws);
+}
+
 void	add(PhoneBook &pb) {
-	const std::string	ws = "\a\b\t\n\v\f\r";
+	const std::string	ws = "\a\b\t\n\v\f\r ";
 	const std::string	fields[5] = {
 		"Firstname: ",
 		"Lastname: ", 
@@ -36,15 +47,16 @@ void	add(PhoneBook &pb) {
 				std::cin.clear();
 				clearerr(stdin);
 			}
-			else if (input.empty())
-				loop = true;
+			else if (input.empty() || all_ws(input))
+				std::cout << "Invalid field value!" << std::endl;
 			else
 				loop = false;
-			std::cout << std::endl;
+			if (loop)
+				std::cout << std::endl;
 		}
 		loop = true;
-		input = input.erase(0, input.find_first_not_of(ws));
-		input = input.erase(input.find_last_not_of(ws) + 1);
+		input.erase(0, input.find_first_not_of(ws));
+		input.erase(input.find_last_not_of(ws) + 1);
 		input = replace_ws(input);
 		pb.contacts[pb.current_idx % 8].info[i] = input;
 	}
@@ -75,27 +87,40 @@ void	search(PhoneBook &pb) {
 
 	// SELECT
 	const std::string	fields[5] = {
-		"Firstname: ",
-		"Lastname: ", 
-		"Nickname: ", 
+		"Firstname:    ",
+		"Lastname:     ", 
+		"Nickname:     ", 
 		"Phone Number: ", 
-		"Dark Secret: "
+		"Dark Secret:  "
 	};
 	std::string	input;
 	int			index;
+	bool		loop = true;
+
 	std::cout << "Select By Index: ";
-	std::cin >> input;
-	index = atoi(input.c_str());
-	std::cout << "Index: " << index << std::endl;
-	if (index <= 0)
-		std::cout << "Invalid Index!" << std::endl;
-	else if (index > 8)
-		std::cout << "Invalid Index!" << std::endl;
-	else if (static_cast<size_t>(index) > pb.current_idx)
-		std::cout << "Invalid Index!" << std::endl;
-	else {
-		for (int i = 0; i < 5; i++)
-			std::cout << fields[i] << pb.contacts[index - 1].info[i] << std::endl;
+	while (loop) {
+		std::getline(std::cin, input);
+		if (std::cin.bad())
+			exit(EXIT_FAILURE);
+		else if (std::cin.eof()) {
+			std::cin.clear();
+			clearerr(stdin);
+		}
+		else {
+			index = atoi(input.c_str());
+			std::cout << "Index: " << index << std::endl;
+			if (index <= 0)
+				std::cout << "Invalid Index!" << std::endl;
+			else if (index > 8)
+				std::cout << "Invalid Index!" << std::endl;
+			else if (static_cast<size_t>(index) > pb.current_idx)
+				std::cout << "Invalid Index!" << std::endl;
+			else {
+				for (int i = 0; i < 5; i++)
+					std::cout << fields[i] << pb.contacts[index - 1].info[i] << std::endl;
+			}
+			loop = false;
+		}
 	}
 }
 
