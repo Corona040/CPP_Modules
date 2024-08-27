@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string>
+#include <cstdio>
 
 void	add(PhoneBook &pb) {
 	const std::string	fields[5] = {
@@ -13,14 +14,25 @@ void	add(PhoneBook &pb) {
 		"Dark Secret: "
 	};
 	std::string			input;
+	bool				loop = true;
 
 	for (size_t i = 0; i < 5; i++) {
-		std::cout << fields[i];
-		std::cin >> input;
-		while (input.empty()) {
+		while (loop) {
+			std::cout << fields[i];
+			std::getline(std::cin, input);
+			if (std::cin.bad())
+				exit(EXIT_FAILURE);
+			else if (std::cin.eof()) {
+				std::cin.clear();
+				clearerr(stdin);
+			}
+			else if (input.empty())
+				loop = true;
+			else
+				loop = false;
 			std::cout << std::endl;
-			std::cin >> input;
 		}
+		loop = true;
 		pb.contacts[pb.current_idx % 8].info[i] = input;
 	}
 	pb.current_idx++;
@@ -79,11 +91,17 @@ int	main(void) {
 	PhoneBook	pb;
 
 	std::cout << "Commands: ADD | SEARCH | EXIT" << std::endl;
-	while (1)
-	{
-		std::cout << "> ";
-		std::cin >> command;
-		if (!command.compare("ADD"))
+	std::cout << "> ";
+	while (1) {
+		std::getline(std::cin, command);
+		if (std::cin.bad())
+			exit(EXIT_FAILURE);
+		else if (std::cin.eof()) {
+			std::cin.clear();
+			clearerr(stdin);
+			std::cout << "Invalid Command!" << std::endl;
+		}
+		else if (!command.compare("ADD"))
 			add(pb);
 		else if (!command.compare("SEARCH"))
 			search(pb);
@@ -91,5 +109,6 @@ int	main(void) {
 			exit(EXIT_SUCCESS);
 		else
 			std::cout << "Invalid Command!" << std::endl;
+		std::cout << "> ";
 	}
 }

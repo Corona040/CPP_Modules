@@ -4,10 +4,10 @@ SRC = main.cpp PhoneBook.cpp Contact.cpp
 
 CFLAG = -Wall -Wextra -Werror -std=c++98 -g
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(SRC)
-	c++ -o $@ $^  $(CFLAG)
+	c++ -o $@ $^ $(CFLAG)
 
 clean:
 
