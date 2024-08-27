@@ -1,11 +1,21 @@
 #include "PhoneBook.hpp"
+#include <cstddef>
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
 #include <string>
 #include <cstdio>
 
+std::string &replace_ws(std::string &str) {
+	for (size_t i = 0; i < str.length(); i++) {
+		if (std::isspace(str[i]))
+			str[i] = ' ';
+	}
+	return (str);
+}
+
 void	add(PhoneBook &pb) {
+	const std::string	ws = "\a\b\t\n\v\f\r";
 	const std::string	fields[5] = {
 		"Firstname: ",
 		"Lastname: ", 
@@ -33,6 +43,9 @@ void	add(PhoneBook &pb) {
 			std::cout << std::endl;
 		}
 		loop = true;
+		input = input.erase(0, input.find_first_not_of(ws));
+		input = input.erase(input.find_last_not_of(ws) + 1);
+		input = replace_ws(input);
 		pb.contacts[pb.current_idx % 8].info[i] = input;
 	}
 	pb.current_idx++;
