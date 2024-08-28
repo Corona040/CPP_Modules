@@ -6,15 +6,15 @@
 
 class AAnimal {
 	public:
+		virtual void	makeSound(void) const = 0;
+		std::string		getType(void) const;
+
+	protected:
 		AAnimal(void);
 		AAnimal(const AAnimal &a);
 		AAnimal &(operator=)(const AAnimal &a);
 		virtual	~AAnimal(void);
 
-		virtual void	makeSound(void) const = 0;
-		std::string		getType(void) const;
-
-	protected:
 		std::string type;
 };
 
