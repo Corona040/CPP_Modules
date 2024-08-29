@@ -14,13 +14,8 @@ Character::Character(const Character &c) {
 			delete this->inventory[i];
 			this->inventory[i] = 0;
 		}
-		if (c.inventory[i]) {
-			const std::string type = c.inventory[i]->getType();
-			if (type == "ice")
-				this->inventory[i] = new Ice();
-			else if (type == "cure")
-				this->inventory[i] = new Cure();
-		}
+		if (c.inventory[i])
+				this->inventory[i] = c.inventory[i]->clone();
 	}
 }
 
@@ -58,7 +53,7 @@ void	Character::unequip(int idx) {
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	if (this->inventory[idx]) {
+	if (idx >= 0 && idx < 4 && this->inventory[idx]) {
 		this->inventory[idx]->use(target);
 		delete this->inventory[idx];
 		this->inventory[idx] = 0;
