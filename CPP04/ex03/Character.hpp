@@ -17,11 +17,11 @@ class Character: public ICharacter {
 		const std::string	&getName(void) const;
 		void				equip(AMateria *m);
 		void				unequip(int idx);
-		void				use(int idx, Character &target);
+		void				use(int idx, ICharacter &target);
 	
 	private:
 		const std::string	name;
-		AMateria			*inventory[4] = {0,0,0,0};
+		AMateria			*inventory[4];
 };
 
 #endif

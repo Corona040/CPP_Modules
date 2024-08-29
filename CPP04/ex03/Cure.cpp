@@ -1,16 +1,17 @@
 #include "Cure.hpp"
 
-Cure::Cure(void): AMateria("ice") {
+Cure::Cure(void): AMateria("cure") {
 	std::cout << "Cure Default Constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &i): AMateria("ice") {
+Cure::Cure(const Cure &c): AMateria("cure") {
 	std::cout << "Cure Copy Constructor called" << std::endl;
+	(void)c;
 }
 
-Cure &(Cure::operator=)(const Cure &i) {
+Cure &(Cure::operator=)(const Cure &c) {
 	std::cout << "Cure Copy Assignment Operator called" << std::endl;
-	this->type = i.type;
+	this->type = c.type;
 	return (*this);
 }
 

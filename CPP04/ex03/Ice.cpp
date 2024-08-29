@@ -6,6 +6,7 @@ Ice::Ice(void): AMateria("ice") {
 
 Ice::Ice(const Ice &i): AMateria("ice") {
 	std::cout << "Ice Copy Constructor called" << std::endl;
+	(void)i;
 }
 
 Ice &(Ice::operator=)(const Ice &i) {

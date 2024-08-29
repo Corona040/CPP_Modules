@@ -1,6 +1,6 @@
 #include "AMateria.hpp"
 
-AMateria::AMateria(const std::string &type): type(type) {
+AMateria::AMateria(const std::string &t): type(t) {
 	std::cout << "AMateria base Default Constructor called" << std::endl;
 }
 
@@ -21,4 +21,8 @@ AMateria::~AMateria(void) {
 const std::string	&AMateria::getType(void) const {
 	std::cout << "AMateria base getType called" << std::endl;
 	return (this->type);
+}
+
+void	AMateria::use(ICharacter &target) {
+	std::cout << "AMateria use: " << target.getName() << std::endl;
 }
