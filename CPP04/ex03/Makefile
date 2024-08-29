@@ -1,6 +1,6 @@
 NAME = interface
 
-CFLAG = -Wall -Wextra -Werror -Wshadow -std=c++98
+CFLAG = -Wall -Wextra -Werror -Wshadow -std=c++98 -g
 
 SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
@@ -16,4 +16,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+vgdb:
+	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes -q --vgdb-error=0 ./$(NAME)
+
+.PHONY: all clean fclean re vgdb
