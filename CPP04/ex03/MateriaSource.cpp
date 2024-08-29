@@ -24,12 +24,16 @@ MateriaSource &(MateriaSource::operator=)(const MateriaSource &m) {
 
 MateriaSource::~MateriaSource(void) {
 	std::cout << "MateriaSource Default Destructor called" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		if (this->templates[i])
+			delete this->templates[i];
+	}
 }
 
 void	MateriaSource::learnMateria(AMateria *m) {
 	for (int i = 0; i < 4; i++) {
 		if (this->templates[i] == 0) {
-			this->templates[i] = m;
+			this->templates[i] = m->clone();
 			break;
 		}
 	}
