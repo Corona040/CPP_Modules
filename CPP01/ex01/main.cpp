@@ -8,3 +8,6 @@ int	main(void) {
 	delete []z;
 	return (0);
 }
+
+// Motif
+// Learning to use 'new' keyword to allocate arrays

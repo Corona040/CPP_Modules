@@ -14,3 +14,6 @@ int	main(void) {
 	std::cout << *pstr << std::endl;
 	std::cout << rstr << std::endl;
 }
+
+// Motif
+// Learning about and using C++ references

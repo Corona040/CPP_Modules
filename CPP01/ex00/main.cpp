@@ -10,3 +10,14 @@ int	main(void)
 	delete z;
 	return (0);
 }
+
+// Motif
+// Using 'new' keyword
+// Deciding whether it's better to use dynamic or static allocation
+//
+// newZombie uses heap allocation so it can be returned
+// randomChump can be static allocated and destroyed
+//
+// announce function should be declared const
+//
+// newZombie and randomChump could be methods

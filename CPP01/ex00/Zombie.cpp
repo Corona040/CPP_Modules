@@ -3,7 +3,7 @@
 Zombie::Zombie(std::string name): name(name) {};
 
 Zombie::~Zombie(void) {
-	std::cout << this->name << std::endl;
+	std::cout << this->name << " Default Destructor called" << std::endl;
 }
 
 void Zombie::announce(void) {
