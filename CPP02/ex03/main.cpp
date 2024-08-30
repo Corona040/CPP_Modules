@@ -14,3 +14,6 @@ int main(int argc, char **argv) {
 	std::cout << bsp(a, b, c, point) << std::endl;
 	return 0;
 }
+
+// Motif
+// Using the Fixed class implementation

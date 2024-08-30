@@ -13,3 +13,12 @@ int	main(void) {
 
 	return (0);
 }
+
+// Motif
+// Learning about Orthodox Cannonical Form (OCF)
+//   Rule of 3
+//     Constructor
+//     Copy Constructor
+//     Copy Assignment Operator (Copy and Swap Idiom)
+//
+//     + Destructor
