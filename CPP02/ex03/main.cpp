@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 	Point point(atof(argv[7]), atof(argv[8]));
 
 	std::cout << bsp(a, b, c, point) << std::endl;
-	return 0;
+	return (0);
 }
 
 // Motif

@@ -10,7 +10,7 @@ class Fixed {
 		Fixed(const int v);
 		Fixed(const float v);
 		Fixed(const Fixed &f);
-		Fixed &(operator=)(const Fixed &rhs);
+		Fixed &(operator=)(Fixed rhs);
 		~Fixed(void);
 
 		int		getRawBits(void) const;
