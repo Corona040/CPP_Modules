@@ -26,3 +26,10 @@ int	main(void) {
 		std::cout << "> ";
 	}
 }
+
+// Motif
+// Getting familiar with declaring classes and public/private members
+// public members are always visible
+// private members are only visible to other class members
+// this keywords can be used by 'non-static' member functions to refer to the current object
+// scope resolution operator '::' to define class functions outside of class

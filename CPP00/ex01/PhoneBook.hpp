@@ -15,11 +15,11 @@ class PhoneBook {
 		~PhoneBook(void);
 
 		void	add(void);
-		void	search(void);
+		void	search(void) const;
 
 	private:
-		void	display(void);
-		void	select(void);
+		void	display(void) const;
+		void	select(void) const;
 
 		std::string &replace_ws(std::string &str);
 		bool		all_ws(std::string &str);

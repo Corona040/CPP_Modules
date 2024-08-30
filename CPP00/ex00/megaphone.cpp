@@ -21,3 +21,6 @@ int main(int argc, char **argv)
 		std::cout << std::endl;
 	}
 }
+
+// Motif
+// Get familiar with cpp default objects, methods and operators

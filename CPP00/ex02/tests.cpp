@@ -70,3 +70,9 @@ int		main( void ) {
 // -*- mode: c++-mode;                                                       -*-
 // -*- fill-column: 75; comment-column: 75;                                  -*-
 // ************************************************************************** //
+
+// Motif
+// Getting familiar with implementing classes
+// static data members are not associated with objects but with the class itself
+// static function members can be called even if no object is istantiated
+//   these functions can't use the 'this' keyword

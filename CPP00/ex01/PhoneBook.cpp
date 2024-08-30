@@ -1,7 +1,11 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void):current_idx(0){};
-PhoneBook::~PhoneBook(void){;};
+PhoneBook::PhoneBook(void): current_idx(0) {}
+PhoneBook::PhoneBook(const PhoneBook &p): current_idx(p.current_idx) {}
+PhoneBook &(PhoneBook::operator=)(const PhoneBook &p) {
+	return (*this);
+}
+PhoneBook::~PhoneBook(void){}
 
 std::string &PhoneBook::replace_ws(std::string &str) {
 	for (size_t i = 0; i < str.length(); i++) {
@@ -60,7 +64,7 @@ void	PhoneBook::add(void) {
 	this->current_idx++;
 }
 
-void	PhoneBook::display(void) {
+void	PhoneBook::display(void) const {
 	std::string	display;
 
 	std::cout << std::setw(10) << "   INDEX  " << "|";
@@ -82,7 +86,7 @@ void	PhoneBook::display(void) {
 	}
 }
 
-void	PhoneBook::select(void) {
+void	PhoneBook::select(void) const {
 	const std::string	fields[5] = {
 		"Firstname:    ",
 		"Lastname:     ", 
@@ -121,7 +125,7 @@ void	PhoneBook::select(void) {
 	}
 }
 
-void	PhoneBook::search(void) {
+void	PhoneBook::search(void) const {
 	PhoneBook::display();
 	PhoneBook::select();
 }

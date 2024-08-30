@@ -7,7 +7,7 @@ class Contact {
 	public:
 		Contact(void);
 		Contact(const Contact &c);
-		Contact &(operator =)(Contact const &rhs);
+		Contact &(operator =)(const Contact &rhs);
 		~Contact(void);
 
 		std::string	info[5];
