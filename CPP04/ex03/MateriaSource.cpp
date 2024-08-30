@@ -42,9 +42,7 @@ void	MateriaSource::learnMateria(AMateria *m) {
 AMateria	*MateriaSource::createMateria(const std::string &type) {
 	for (int i = 0; i < 4; i++) {
 		if (this->templates[i]->getType() == type) {
-			try {
-				return (this->templates[i]->clone());
-			} catch (int) {}
+			return (this->templates[i]->clone());
 		}
 	}
 	return (0);
