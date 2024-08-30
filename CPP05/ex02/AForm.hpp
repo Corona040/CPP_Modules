@@ -9,7 +9,6 @@ class Bureaucrat;
 class AForm {
 	public:
 		AForm(const std::string name, const int grade_to_sign, const int grade_to_exec);
-		AForm(const std::string name, const int grade_to_sign, const int grade_to_exec, const std::string target);
 		AForm(const AForm &f);
 		AForm &(operator=)(const AForm &f);
 		~AForm(void);
@@ -51,6 +50,8 @@ class AForm {
 		const int			grade_to_exec;
 
 	protected:
+		AForm(const std::string name, const int grade_to_sign, const int grade_to_exec, const std::string target);
+
 		const std::string	target;
 };
 std::ostream	&(operator <<)(std::ostream &os, const AForm &f);
