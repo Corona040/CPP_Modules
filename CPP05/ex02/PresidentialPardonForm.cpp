@@ -1,6 +1,6 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string t): AForm("PresidentialPardon", 25, 5, t) {}
+PresidentialPardonForm::PresidentialPardonForm(const std::string t): AForm("presidential pardon", 25, 5, t) {}
 
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &s): AForm(s.getName(), s.getGradeToSign(), s.getGradeToExec()) {}
 

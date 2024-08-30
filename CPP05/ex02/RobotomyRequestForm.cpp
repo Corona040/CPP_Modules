@@ -1,6 +1,6 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string t): AForm("RobotomyRequest", 72, 45, t) {}
+RobotomyRequestForm::RobotomyRequestForm(const std::string t): AForm("robotomy request", 72, 45, t) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &s): AForm(s.getName(), s.getGradeToSign(), s.getGradeToExec()) {}
 

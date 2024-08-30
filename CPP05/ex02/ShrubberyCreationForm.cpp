@@ -1,6 +1,6 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string t): AForm("ShrubberyCreation", 145, 137, t) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string t): AForm("shrubbery creation", 145, 137, t) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &s): AForm(s.getName(), s.getGradeToSign(), s.getGradeToExec()) {}
 
