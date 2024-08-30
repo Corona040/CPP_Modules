@@ -9,12 +9,12 @@ ClapTrap::ClapTrap(const ClapTrap &ct): name(ct.name), hp(ct.hp), ep(ct.hp), ad(
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-ClapTrap &(ClapTrap::operator=)(const ClapTrap &rhs) {
+ClapTrap &(ClapTrap::operator=)(ClapTrap rhs) {
 	std::cout << "Copy assignment constructor called" << std::endl;
-	this->name = rhs.name;
-	this->hp = rhs.hp;
-	this->ep = rhs.ep;
-	this->ad = rhs.ad;
+	std::swap(this->name, rhs.name);
+	std::swap(this->hp, rhs.hp);
+	std::swap(this->ep, rhs.ep);
+	std::swap(this->ad, rhs.ad);
 	return (*this);
 }
 

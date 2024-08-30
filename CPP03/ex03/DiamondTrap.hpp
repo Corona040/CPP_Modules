@@ -8,7 +8,7 @@ class DiamondTrap: public ScavTrap, public FlagTrap {
 	public:
 		DiamondTrap(std::string n);
 		DiamondTrap(const DiamondTrap &dt);
-		DiamondTrap &(operator=)(const DiamondTrap &rhs);
+		DiamondTrap &(operator=)(DiamondTrap rhs);
 		~DiamondTrap(void);
 
 		void	whoAmI(void);

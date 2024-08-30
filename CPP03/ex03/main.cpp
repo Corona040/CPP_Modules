@@ -51,3 +51,6 @@ int	main(void) {
 	dt.whoAmI();
 	return (0);
 }
+
+// Motif
+// learning about the diamond inheritance problem

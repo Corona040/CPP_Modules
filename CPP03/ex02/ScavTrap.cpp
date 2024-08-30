@@ -11,12 +11,12 @@ ScavTrap::ScavTrap(const ScavTrap &ct): ClapTrap(ct) {
 	std::cout << "ScavTrap Copy constructor called" << std::endl;
 }
 
-ScavTrap &(ScavTrap::operator=)(const ScavTrap &rhs) {
+ScavTrap &(ScavTrap::operator=)(ScavTrap rhs) {
 	std::cout << "ScavTrap Copy assignment constructor called" << std::endl;
-	this->name = rhs.name;
-	this->hp = rhs.hp;
-	this->ep = rhs.ep;
-	this->ad = rhs.ad;
+	std::swap(this->name, rhs.name);
+	std::swap(this->hp, rhs.hp);
+	std::swap(this->ep, rhs.ep);
+	std::swap(this->ad, rhs.ad);
 	return (*this);
 }
 

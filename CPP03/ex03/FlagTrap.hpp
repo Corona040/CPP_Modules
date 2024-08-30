@@ -7,7 +7,7 @@ class FlagTrap: virtual public ClapTrap {
 	public:
 		FlagTrap(const std::string n);
 		FlagTrap(const FlagTrap &ct);
-		FlagTrap &(operator=)(const FlagTrap &rhs);
+		FlagTrap &(operator=)(FlagTrap rhs);
 		~FlagTrap(void);
 
 		void	attack(const std::string &target);
