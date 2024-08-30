@@ -2,7 +2,7 @@
 
 Weapon::Weapon(void): type("") {}
 
-Weapon::Weapon(std::string t): type(t) {}
+Weapon::Weapon(const std::string t): type(t) {}
 
 Weapon::Weapon(const Weapon &w) {
 	this->type = w.type;

@@ -7,16 +7,17 @@
 
 class HumanB {
 	public:
-		HumanB(std::string n);
+		HumanB(const std::string name);
 		HumanB(const HumanB &h);
 		HumanB &(operator =)(const HumanB &h);
 		~HumanB(void);
 
-		std::string name;
-		Weapon		*weapon;
-
 		void		attack(void);
 		void		setWeapon(Weapon &w);
+	
+	private:
+		std::string name;
+		Weapon		*weapon;
 };
 
 #endif

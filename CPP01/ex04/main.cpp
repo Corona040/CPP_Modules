@@ -32,3 +32,6 @@ int	main(int argc, char **argv) {
 	infile.close();
 	outfile.close();
 }
+
+// Motif
+// Learning about and using file io in C++

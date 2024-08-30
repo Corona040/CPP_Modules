@@ -21,3 +21,9 @@ int main()
 	}
 	return 0;
 }
+
+// Motif
+// Because HumanA will always hold a weapon 
+//   the weapon member is a Weapon reference
+// Because HumanB might not hold a weapon
+//   the weapon member is a Weapon pointer

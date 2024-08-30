@@ -4,6 +4,10 @@ typedef void (f)(void);
 
 Harl::Harl(void){};
 
+Harl &(Harl::operator=)(const Harl &h) {
+	return (*this);
+}
+
 Harl::~Harl(void){};
 
 void	Harl::debug(void) {

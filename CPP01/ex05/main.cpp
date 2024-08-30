@@ -9,3 +9,6 @@ int	main(void) {
 	harl.complain("error");
 	harl.complain("maniac");
 }
+
+// Motif
+// learning about pointer to member functions

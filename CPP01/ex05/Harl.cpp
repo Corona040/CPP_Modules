@@ -4,6 +4,10 @@ typedef void (f)(void);
 
 Harl::Harl(void){};
 
+Harl &(Harl::operator=)(const Harl &h) {
+	return (*this);
+}
+
 Harl::~Harl(void){};
 
 void	Harl::debug(void) {
@@ -26,7 +30,6 @@ void	Harl::complain(std::string level) {
 	std::string	levels[] = {"debug", "info", "warning", "error"};
 	f		Harl::*funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	(void)funcs;
 	for (int i = 0; i < 4; i++) {
 		if (level == levels[i]) {
 			(this->*funcs[i])();
