@@ -13,6 +13,10 @@ RobotomyRequestForm::~RobotomyRequestForm(void) {}
 
 void RobotomyRequestForm::execute(const Bureaucrat &b) const {
 	this->beExecuted(b);
+	srand(time((time_t *)0));
 	std::cout << "BZZZZZZZZZZZZZZ..." << std::endl;
-	std::cout << this->target << " Successfully Robotomized" << std::endl;
+	if (rand() > (RAND_MAX / 2))
+		std::cout << this->target << " Successfully Robotomized" << std::endl;
+	else
+		std::cout << this->target << "Robotomy Failed" << std::endl;
 }

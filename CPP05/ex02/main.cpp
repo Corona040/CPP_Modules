@@ -1,13 +1,17 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main(void) {
 	try {
 		Bureaucrat b("HighRank", 1);
 		Bureaucrat bb("LowRank", 150);
-		AForm *f = new ShrubberyCreationForm("home");
+		AForm *r = new RobotomyRequestForm("home");
+		AForm *f = new PresidentialPardonForm("home");
 
+		(void)r;
 		b.executeForm(*f);
 		b.signForm(*f);
 		b.executeForm(*f);
