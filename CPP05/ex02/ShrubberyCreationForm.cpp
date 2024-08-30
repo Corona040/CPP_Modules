@@ -12,6 +12,20 @@ ShrubberyCreationForm &(ShrubberyCreationForm::operator=)(const ShrubberyCreatio
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
 void ShrubberyCreationForm::execute(const Bureaucrat &b) const {
+	std::ofstream	outfile;
+		
+
 	this->beExecuted(b);
-	std::cout << this->target << ": 🌳" << std::endl;
+	outfile.open((target + "_shrubbery").c_str());
+	outfile << "  .:::::::::::::.   \n";
+	outfile << " .:::::::::::::::.  \n";
+	outfile << " :::::\\/::\\:::|:::  \n";
+	outfile << "  '::\\/:|::|/:/-:'  \n";
+	outfile << "   '::\\:/''|:/::'   \n";
+	outfile << "     `'Y    Y'`     \n";
+	outfile << "     <=T  @ T       \n";
+	outfile << "       |    |       \n";
+	outfile << "       )    |       \n";
+	outfile << "      / /  | \\      \n";
+	outfile.close();
 }
