@@ -1,10 +1,6 @@
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void): current_idx(0) {}
-PhoneBook::PhoneBook(const PhoneBook &p): current_idx(p.current_idx) {}
-PhoneBook &(PhoneBook::operator=)(const PhoneBook &p) {
-	return (*this);
-}
 PhoneBook::~PhoneBook(void){}
 
 std::string &PhoneBook::replace_ws(std::string &str) {

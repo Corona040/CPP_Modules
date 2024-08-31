@@ -10,8 +10,6 @@
 class PhoneBook {
 	public:
 		PhoneBook(void);
-		PhoneBook(const PhoneBook &p);
-		PhoneBook &(operator=)(PhoneBook const &rhs);
 		~PhoneBook(void);
 
 		void	add(void);
