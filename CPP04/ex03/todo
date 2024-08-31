@@ -1,9 +1,0 @@
-save address after unequip to clean up memory
-
-should MateriaSource::learMateria copy the argument? Or just save its address?
-Subject says learnMateria should *copy* the argument, but...
-From the subject-provided main it seems we should save its address? learnMateria(new Ice()), otherwise we would have a memory leak (from not saving the address returned by new)
-
-If MateriaSource saves the address passed as parameter to learnMateria (and not a copy)
-What to do if the Materia passed as a parameter is deleted? The address saved in MateriaSource would be garbage and cause a segfault...
-Should we simply consider the user responsible to not delete these materias? Is this a test we should just ignore?

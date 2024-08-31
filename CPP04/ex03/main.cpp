@@ -25,3 +25,6 @@ int main()
 	delete src;
 	return 0;
 }
+
+// Motif
+// learning about pure virtual classes (interfaces)

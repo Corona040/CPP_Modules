@@ -9,7 +9,7 @@ class MateriaSource: public IMateriaSource {
 	public:
 		MateriaSource(void);
 		MateriaSource(const MateriaSource &m);
-		MateriaSource &(operator=)(const MateriaSource &m);
+		MateriaSource &(operator=)(MateriaSource m);
 		~MateriaSource(void);
 
 		void		learnMateria(AMateria *);

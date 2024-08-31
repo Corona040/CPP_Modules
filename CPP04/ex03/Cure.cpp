@@ -9,9 +9,9 @@ Cure::Cure(const Cure &c): AMateria("cure") {
 	(void)c;
 }
 
-Cure &(Cure::operator=)(const Cure &c) {
+Cure &(Cure::operator=)(Cure c) {
 	std::cout << "Cure Copy Assignment Operator called" << std::endl;
-	this->type = c.type;
+	std::swap(this->type, c.type);
 	return (*this);
 }
 

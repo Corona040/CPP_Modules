@@ -15,9 +15,10 @@ Cat::Cat(const Cat &a): AAnimal(a) {
 		this->brain->ideas[i] = a.brain->ideas[i];
 }
 
-Cat &(Cat::operator=)(const Cat &a) {
+Cat &(Cat::operator=)(Cat a) {
 	std::cout << "Cat Derived Copy Assignment Operator called" << std::endl;
-	*this = Cat(a);
+	std::swap(this->type, a.type);
+	std::swap(this->brain, a.brain);
 	return (*this);
 }
 

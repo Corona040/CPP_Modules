@@ -12,14 +12,16 @@ class AAnimal {
 	protected:
 		AAnimal(void);
 		AAnimal(const AAnimal &a);
-		AAnimal &(operator=)(const AAnimal &a);
 		virtual	~AAnimal(void);
 
 		std::string type;
+	
+	private:
+		AAnimal &(operator=)(AAnimal a);
 };
 
 #endif
 
 // Creating pure virtual function (virtual .. = 0)
-// Making destructor pure virtual
+// Making destructor virtual
 // Making constructors protected

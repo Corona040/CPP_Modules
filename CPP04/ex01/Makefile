@@ -1,6 +1,6 @@
 NAME = brain
 
-CFLAG = -Wall -Wextra -Werror -Wshadow -std=c++98
+CFLAG = -Wall -Wextra -Werror -Wshadow -std=c++98 -g
 
 SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 

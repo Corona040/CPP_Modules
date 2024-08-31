@@ -19,11 +19,9 @@ Character::Character(const Character &c) {
 	}
 }
 
-Character &(Character::operator=)(const Character &c) {
+Character &(Character::operator=)(Character c) {
 	std::cout << "Character Copy Assignment operator called" << std::endl;
-	for (int i = 0; i < 4; i++) {
-		this->inventory[i] = c.inventory[i];
-	}
+	std::swap(this->inventory, c.inventory);
 	return (*this);
 }
 

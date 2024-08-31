@@ -12,9 +12,9 @@ Brain::Brain(const Brain &b) {
 		this->ideas[i] = b.ideas[i];
 }
 
-Brain &(Brain::operator=)(const Brain &rhs) {
+Brain &(Brain::operator=)(Brain rhs) {
 	std::cout << "Brain Copy Assignment Operator called" << std::endl;
-	*this = Brain(rhs);
+	std::swap(this->ideas, rhs.ideas);
 	return (*this);
 }
 

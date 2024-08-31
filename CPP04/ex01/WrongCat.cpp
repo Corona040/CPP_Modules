@@ -10,9 +10,9 @@ WrongCat::WrongCat(const WrongCat &a): WrongAnimal(a) {
 	WrongAnimal::type = a.type;
 }
 
-WrongCat &(WrongCat::operator=)(const WrongCat &a) {
+WrongCat &(WrongCat::operator=)(WrongCat a) {
 	std::cout << "WrongCat Derived Copy Assignment Operator called" << std::endl;
-	this->type = a.type;
+	std::swap(this->type, a.type);
 	return (*this);
 }
 

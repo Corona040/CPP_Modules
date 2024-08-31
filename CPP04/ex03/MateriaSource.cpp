@@ -14,11 +14,9 @@ MateriaSource::MateriaSource(const MateriaSource &m) {
 	}
 }
 
-MateriaSource &(MateriaSource::operator=)(const MateriaSource &m) {
+MateriaSource &(MateriaSource::operator=)(MateriaSource m) {
 	std::cout << "MateriaSource Copy Assignment operator called" << std::endl;
-	for (int i = 0; i < 4; i++) {
-		this->templates[i] = m.templates[i];
-	}
+	std::swap(this->templates, m.templates);
 	return (*this);
 }
 
@@ -33,7 +31,7 @@ MateriaSource::~MateriaSource(void) {
 void	MateriaSource::learnMateria(AMateria *m) {
 	for (int i = 0; i < 4; i++) {
 		if (this->templates[i] == 0) {
-			this->templates[i] = m->clone();
+			this->templates[i] = m;
 			break;
 		}
 	}

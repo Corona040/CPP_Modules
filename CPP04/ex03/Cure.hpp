@@ -6,8 +6,8 @@
 class Cure: public AMateria {
 	public:
 		Cure(void);
-		Cure(const Cure &i);
-		Cure &(operator=)(const Cure &i);
+		Cure(const Cure &c);
+		Cure &(operator=)(Cure c);
 		~Cure(void);
 
 		AMateria	*clone() const;

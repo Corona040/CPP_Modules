@@ -3,7 +3,7 @@
 Dog::Dog(void): Animal() {
 	std::cout << "Dog Derived Default Constructor called" << std::endl;
 	Animal::type = "Dog";
-	this->brain = new Brain;
+	this->brain = new Brain();
 }
 
 Dog::Dog(const Dog &a): Animal(a) {
@@ -11,13 +11,15 @@ Dog::Dog(const Dog &a): Animal(a) {
 	const int	ideas_size = 100;
 
 	Animal::type = a.type;
+	this->brain = new Brain();
 	for (int i = 0; i < ideas_size; i++)
 		this->brain->ideas[i] = a.brain->ideas[i];
 }
 
-Dog &(Dog::operator=)(const Dog &a) {
+Dog &(Dog::operator=)(Dog a) {
 	std::cout << "Dog Derived Copy Assignment Operator called" << std::endl;
-	*this = Dog(a);
+	std::swap(this->type, a.type);
+	std::swap(this->brain, a.brain);
 	return (*this);
 }
 

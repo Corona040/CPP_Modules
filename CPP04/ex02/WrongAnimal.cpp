@@ -8,9 +8,9 @@ WrongAnimal::WrongAnimal(const WrongAnimal &a): type(a.type) {
 	std::cout << "WrongAnimal base Copy Constructor called" << std::endl;
 }
 
-WrongAnimal &(WrongAnimal::operator=)(const WrongAnimal &a) {
+WrongAnimal &(WrongAnimal::operator=)(WrongAnimal a) {
 	std::cout << "WrongAnimal base Copy Assignment Operator called" << std::endl;
-	this->type = a.type;
+	std::swap(this->type, a.type);
 	return (*this);
 }
 

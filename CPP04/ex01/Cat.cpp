@@ -3,7 +3,7 @@
 Cat::Cat(void): Animal() {
 	std::cout << "Cat Derived Default Constructor called" << std::endl;
 	Animal::type = "Cat";
-	this->brain = new Brain;
+	this->brain = new Brain();
 }
 
 Cat::Cat(const Cat &a): Animal(a) {
@@ -11,13 +11,15 @@ Cat::Cat(const Cat &a): Animal(a) {
 	const int	ideas_size = 100;
 
 	Animal::type = a.type;
+	this->brain = new Brain();
 	for (int i = 0; i < ideas_size; i++)
 		this->brain->ideas[i] = a.brain->ideas[i];
 }
 
-Cat &(Cat::operator=)(const Cat &a) {
+Cat &(Cat::operator=)(Cat a) {
 	std::cout << "Cat Derived Copy Assignment Operator called" << std::endl;
-	*this = Cat(a);
+	std::swap(this->type, a.type);
+	std::swap(this->brain, a.brain);
 	return (*this);
 }
 

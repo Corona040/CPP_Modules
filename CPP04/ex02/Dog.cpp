@@ -15,9 +15,10 @@ Dog::Dog(const Dog &a): AAnimal(a) {
 		this->brain->ideas[i] = a.brain->ideas[i];
 }
 
-Dog &(Dog::operator=)(const Dog &a) {
+Dog &(Dog::operator=)(Dog a) {
 	std::cout << "Dog Derived Copy Assignment Operator called" << std::endl;
-	*this = Dog(a);
+	std::swap(this->type, a.type);
+	std::swap(this->brain, a.brain);
 	return (*this);
 }
 

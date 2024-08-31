@@ -7,7 +7,7 @@ class Ice: public AMateria {
 	public:
 		Ice(void);
 		Ice(const Ice &i);
-		Ice &(operator=)(const Ice &i);
+		Ice &(operator=)(Ice i);
 		~Ice(void);
 
 		AMateria	*clone() const;

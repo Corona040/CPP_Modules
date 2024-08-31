@@ -10,9 +10,9 @@ Dog::Dog(const Dog &a): Animal(a) {
 	Animal::type = a.type;
 }
 
-Dog &(Dog::operator=)(const Dog &a) {
+Dog &(Dog::operator=)(Dog a) {
 	std::cout << "Dog Derived Copy Assignment Operator called" << std::endl;
-	this->type = a.type;
+	std::swap(this->type, a.type);
 	return (*this);
 }
 

@@ -8,7 +8,6 @@ class Animal {
 	public:
 		Animal(void);
 		Animal(const Animal &a);
-		Animal &(operator=)(const Animal &a);
 		virtual	~Animal(void);
 
 		virtual void	makeSound(void) const;
@@ -16,6 +15,9 @@ class Animal {
 
 	protected:
 		std::string type;
+	
+	private:
+		Animal &(operator=)(Animal a);
 };
 
 #endif

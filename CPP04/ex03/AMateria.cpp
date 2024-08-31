@@ -8,12 +8,6 @@ AMateria::AMateria(const AMateria &m): type(m.type) {
 	std::cout << "AMateria base Copy Constructor called" << std::endl;
 }
 
-AMateria &(AMateria::operator=)(const AMateria &m) {
-	std::cout << "AMateria base Copy Assignment Operator called" << std::endl;
-	this->type = m.type;
-	return (*this);
-}
-
 AMateria::~AMateria(void) {
 	std::cout << "AMateria base Default Destructor called" << std::endl;
 }
