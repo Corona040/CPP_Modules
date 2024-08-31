@@ -1,12 +1,6 @@
 #include "Harl.hpp"
 
-typedef void (f)(void);
-
 Harl::Harl(void){};
-
-Harl &(Harl::operator=)(const Harl &h) {
-	return (*this);
-}
 
 Harl::~Harl(void){};
 
@@ -28,11 +22,11 @@ void	Harl::error(void) {
 
 void	Harl::complain(std::string level) {
 	std::string	levels[] = {"debug", "info", "warning", "error"};
-	f		Harl::*funcs[] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*f[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	(void)funcs;
+	(void)f;
 	for (int i = 0; i < 4; i++) {
 		if (level == levels[i])
-			(this->*funcs[i])();
+			(this->*f[i])();
 	}
 }

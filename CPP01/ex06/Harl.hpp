@@ -7,8 +7,6 @@
 class Harl {
 	public:
 		Harl(void);
-		Harl(const Harl &h);
-		Harl &(operator =)(const Harl &rhs);
 		~Harl(void);
 
 		void	complain(std::string level);

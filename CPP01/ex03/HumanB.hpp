@@ -8,8 +8,6 @@
 class HumanB {
 	public:
 		HumanB(const std::string name);
-		HumanB(const HumanB &h);
-		HumanB &(operator =)(const HumanB &h);
 		~HumanB(void);
 
 		void		attack(void);

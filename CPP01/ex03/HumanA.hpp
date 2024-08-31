@@ -8,8 +8,6 @@
 class HumanA {
 	public:
 		HumanA(const std::string name, Weapon &weapon);
-		HumanA(const HumanA &h);
-		HumanA &(operator =)(const HumanA &h);
 		~HumanA(void);
 
 		void		attack(void);
