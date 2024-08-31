@@ -10,11 +10,6 @@ Bureaucrat::Bureaucrat(std::string n, int g): name(n), grade(g) {
 
 Bureaucrat::Bureaucrat(const Bureaucrat &b): name(b.name), grade(b.grade) {}
 
-Bureaucrat &(Bureaucrat::operator=)(const Bureaucrat &b) {
-	(void)b;
-	return (*this);
-}
-
 Bureaucrat::~Bureaucrat(void) {}
 
 std::string	Bureaucrat::getName(void) const {

@@ -12,7 +12,7 @@ class RobotomyRequestForm: public AForm {
 		~RobotomyRequestForm(void);
 
 		void execute(const Bureaucrat &b) const;
-	
+
 	private:
 		RobotomyRequestForm &(operator=)(RobotomyRequestForm s);
 };

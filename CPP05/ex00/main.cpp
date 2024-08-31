@@ -9,3 +9,6 @@ int	main(void) {
 		std::cout << e.what() << std::endl;
 	}
 }
+
+// Motif
+// learning about exception, try/catch

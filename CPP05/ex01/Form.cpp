@@ -10,11 +10,6 @@ Form::Form(const std::string n, const int gs, const int ge): name(n), is_signed(
 
 Form::Form(const Form &f): name(f.name), is_signed(f.is_signed), grade_to_sign(f.grade_to_sign), grade_to_exec(f.grade_to_exec) {}
 
-Form &(Form::operator=)(const Form &f) {
-	(void)f;
-	return (*this);
-}
-
 Form::~Form(void) {}
 
 std::string	Form::getName(void) const {

@@ -10,7 +10,7 @@ class PresidentialPardonForm: public AForm {
 		~PresidentialPardonForm(void);
 
 		void execute(const Bureaucrat &b) const;
-	
+
 	private:
 		PresidentialPardonForm &(operator=)(PresidentialPardonForm s);
 };

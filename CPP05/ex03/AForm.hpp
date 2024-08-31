@@ -53,7 +53,7 @@ class AForm {
 	protected:
 		AForm(const std::string name, const int grade_to_sign, const int grade_to_exec, const std::string target);
 
-		std::string			target;
+		const std::string	target;
 };
 std::ostream	&(operator <<)(std::ostream &os, const AForm &f);
 

@@ -10,7 +10,6 @@ class Form {
 	public:
 		Form(const std::string name, const int grade_to_sign, const int grade_to_exec);
 		Form(const Form &f);
-		Form &(operator=)(const Form &f);
 		~Form(void);
 
 		std::string	getName(void) const;
@@ -35,6 +34,8 @@ class Form {
 		};
 	
 	private:
+		Form &(operator=)(Form f);
+
 		const std::string	name;
 		bool				is_signed;
 		const int			grade_to_sign;
