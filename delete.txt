@@ -1,0 +1,18 @@
+CPP01/ex00/main.cpp:	delete z;
+CPP01/ex01/main.cpp:	delete []z;
+CPP04/ex00/main.cpp:// 	delete meta;
+CPP04/ex00/main.cpp:// 	delete i;
+CPP04/ex00/main.cpp:// 	delete j;
+CPP04/ex01/Cat.cpp:	delete this->brain;
+CPP04/ex01/Dog.cpp:	delete this->brain;
+CPP04/ex01/main.cpp:	delete j;//should not create a leak
+CPP04/ex01/main.cpp:	delete i;
+CPP04/ex02/Cat.cpp:	delete this->brain;
+CPP04/ex02/Dog.cpp:	delete this->brain;
+CPP04/ex03/Character.cpp:			delete this->inventory[i];
+CPP04/ex03/Character.cpp:			delete this->inventory[i];
+CPP04/ex03/Character.cpp:		delete this->inventory[idx];
+CPP04/ex03/main.cpp:	delete bob;
+CPP04/ex03/main.cpp:	delete me;
+CPP04/ex03/main.cpp:	delete src;
+CPP04/ex03/MateriaSource.cpp:			delete this->templates[i];
