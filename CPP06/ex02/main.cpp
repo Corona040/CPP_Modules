@@ -18,3 +18,7 @@ int	main(void) {
 	Base::identify(ba);
 	Base::identify(bc);
 }
+
+// Motif
+// dynamic cast
+// cast classes along inheritance hierarchy
