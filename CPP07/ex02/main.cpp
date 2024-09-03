@@ -21,3 +21,7 @@ int	main(void) {
 		std::cout << e.what() << std::endl;
 	}
 }
+
+// Motif
+// class templates
+// template single definition rule

@@ -15,3 +15,6 @@ int	main(void) {
 	std::cout << "\n";
 	iter(b, 3, print<std::string>);
 }
+
+// Motif
+// function temlate with array
