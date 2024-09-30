@@ -9,10 +9,10 @@ class Zombie {
 		Zombie(const std::string name);
 		~Zombie(void);
 
-		void announce(void);
+		void announce(void) const;
 	
 	private:
-		std::string name;
+		const std::string	name;
 };
 
 Zombie *newZombie(std::string name);
