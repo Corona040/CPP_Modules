@@ -12,7 +12,11 @@ Fixed::Fixed(const int v): value(v << fract_bits) {
 
 Fixed::Fixed(const float v) {
 	// std::cout << "Float parameter constructor called" << std::endl;
-	value = (int)((double)v * (1 << fract_bits));
+	value = (int)(v * (0b1 << fract_bits));
+	if (((double)this->toFloat() - v) > ((double)1/(1 << fract_bits)))
+		value -= 0b1;
+	if (((double)v - this->toFloat()) < ((double)1/(1 << fract_bits)))
+		value += 0b1;
 }
 
 Fixed::Fixed(const Fixed &f): value(f.getRawBits()) {
