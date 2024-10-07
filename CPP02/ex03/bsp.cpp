@@ -32,8 +32,8 @@
 /*}*/
 
 // barycentric coord
+// FLOPING
 bool	bsp(Point const a, Point const b, Point const c, Point const point) {
-	Fixed	Area;
 	Fixed	s;
 	Fixed	t;
 
@@ -41,10 +41,9 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	// 0 <= s
 	// 0 <= t
 	// 0 <= 1 - s - t
-	Area = Fixed(0.5f) *(Fixed(-1)*b.gety()*c.getx() + a.gety()*(Fixed(-1)*b.getx() + c.getx()) + a.getx()*(b.gety() - c.gety()) + b.getx()*c.gety());
-	s = Fixed(1)/(Fixed(2)*Area)*(a.gety()*c.getx() - a.getx()*c.gety() + (c.gety() - a.gety())*point.getx() + (a.getx() - c.getx())*point.gety());
-	t = Fixed(1)/(Fixed(2)*Area)*(a.getx()*b.gety() - a.gety()*b.getx() + (a.gety() - b.gety())*point.getx() + (b.getx() - a.getx())*point.gety());
-	// point.getx() - a.getx() = (b.getx() - a.getx())*s + (c.getx() - a.getx())*t;
-
+	s = ((point.gety() - c.gety()) * (b.getx() - c.getx()) + (point.getx() - c.getx()) * (c.gety() - b.gety())) / ((a.gety() - c.gety()) * (b.getx() - c.getx()) + (a.getx() - c.getx()) * (c.gety() - b.gety()));
+	t = (point.getx() - s * a.getx() - c.getx() + s * c.getx()) / (b.getx() - c.getx());
+	std::cout << "s:" << s << std::endl;
+	std::cout << "t:" << t << std::endl;
 	return ((s >= 0) && (t >= 0) && (Fixed(1) - s - t >= 0));
 }
