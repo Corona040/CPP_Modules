@@ -14,6 +14,8 @@ class Point {
 		const Fixed &getx(void) const;
 		const Fixed &gety(void) const;
 
+		static Fixed	area(const Point &a, const Point &b, const Point &c);
+
 	private:
 		const Fixed	x;
 		const Fixed	y;

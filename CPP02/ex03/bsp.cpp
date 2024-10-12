@@ -32,18 +32,20 @@
 /*}*/
 
 // barycentric coord
-// FLOPING
 bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	Fixed	s;
 	Fixed	t;
+	Fixed	area;
 
 	// p = p0 + (p1 - p0)*s + (p2 - p0)*t
 	// 0 <= s
 	// 0 <= t
 	// 0 <= 1 - s - t
-	s = ((point.gety() - c.gety()) * (b.getx() - c.getx()) + (point.getx() - c.getx()) * (c.gety() - b.gety())) / ((a.gety() - c.gety()) * (b.getx() - c.getx()) + (a.getx() - c.getx()) * (c.gety() - b.gety()));
-	t = (point.getx() - s * a.getx() - c.getx() + s * c.getx()) / (b.getx() - c.getx());
-	std::cout << "s:" << s << std::endl;
-	std::cout << "t:" << t << std::endl;
-	return ((s >= 0) && (t >= 0) && (Fixed(1) - s - t >= 0));
+	area = Point::area(a,b,c);
+	s = Point::area(a,b,point)/area;
+	t = Point::area(b,c,point)/area;
+	/*std::cout << "Area of triangle: " << area << std::endl;*/
+	/*std::cout << "1st subarea: " << s << std::endl;*/
+	/*std::cout << "2nd subarea: " << t << std::endl;*/
+	return (s > 0 && t > 0 && s + t < 1);
 }
