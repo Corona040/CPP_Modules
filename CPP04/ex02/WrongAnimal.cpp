@@ -10,7 +10,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &a): type(a.type) {
 
 WrongAnimal &(WrongAnimal::operator=)(WrongAnimal a) {
 	std::cout << "WrongAnimal base Copy Assignment Operator called" << std::endl;
-	std::swap(this->type, a.type);
+	this->type = a.type;
 	return (*this);
 }
 

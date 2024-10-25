@@ -13,10 +13,10 @@ FlagTrap::FlagTrap(const FlagTrap &ct): ClapTrap(ct) {
 
 FlagTrap &(FlagTrap::operator=)(FlagTrap rhs) {
 	std::cout << "FlagTrap Copy assignment constructor called" << std::endl;
-	std::swap(this->name, rhs.name);
-	std::swap(this->hp, rhs.hp);
-	std::swap(this->ep, rhs.ep);
-	std::swap(this->ad, rhs.ad);
+	this->name = rhs.name;
+	this->hp = rhs.hp;
+	this->ep = rhs.ep;
+	this->ad = rhs.ad;
 	return (*this);
 }
 

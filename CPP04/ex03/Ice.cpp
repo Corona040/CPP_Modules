@@ -11,7 +11,7 @@ Ice::Ice(const Ice &i): AMateria("ice") {
 
 Ice &(Ice::operator=)(Ice i) {
 	std::cout << "Ice Copy Assignment Operator called" << std::endl;
-	std::swap(this->type, i.type);
+	this->type = i.type;
 	return (*this);
 }
 

@@ -12,7 +12,7 @@ Dog::Dog(const Dog &a): Animal(a) {
 
 Dog &(Dog::operator=)(Dog a) {
 	std::cout << "Dog Derived Copy Assignment Operator called" << std::endl;
-	std::swap(this->type, a.type);
+	this->type = a.type;
 	return (*this);
 }
 

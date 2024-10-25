@@ -16,7 +16,14 @@ MateriaSource::MateriaSource(const MateriaSource &m) {
 
 MateriaSource &(MateriaSource::operator=)(MateriaSource m) {
 	std::cout << "MateriaSource Copy Assignment operator called" << std::endl;
-	std::swap(this->templates, m.templates);
+	for (int i = 0; i < 4; i++) {
+		if (this->templates[i]) {
+			delete this->templates[i];
+			this->templates[i] = 0;
+		}
+		if (m.templates[i])
+			this->templates[i] = m.templates[i];
+	}
 	return (*this);
 }
 

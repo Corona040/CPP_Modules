@@ -17,8 +17,8 @@ Cat::Cat(const Cat &a): AAnimal(a) {
 
 Cat &(Cat::operator=)(Cat a) {
 	std::cout << "Cat Derived Copy Assignment Operator called" << std::endl;
-	std::swap(this->type, a.type);
-	std::swap(this->brain, a.brain);
+	this->type = a.type;
+	this->brain = a.brain;
 	return (*this);
 }
 

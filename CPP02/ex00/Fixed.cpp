@@ -10,7 +10,7 @@ Fixed::Fixed(const Fixed &f): value(f.value) {
 
 Fixed &(Fixed::operator =)(Fixed rhs) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	std::swap(this->value, rhs.value);
+	this->value = rhs.value;
 	return (*this);
 }
 

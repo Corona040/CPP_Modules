@@ -48,8 +48,8 @@ Array<T>::Array(const Array &a) {
 
 template <typename T>
 Array<T> &(Array<T>::operator=)(Array a) {
-	std::swap(this->array, a.array);
-	std::swap(this->size, a.size);
+	this->array = a.array;
+	this->size = a.size;
 	return (*this);
 }
 

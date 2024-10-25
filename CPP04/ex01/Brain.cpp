@@ -14,7 +14,7 @@ Brain::Brain(const Brain &b) {
 
 Brain &(Brain::operator=)(Brain rhs) {
 	std::cout << "Brain Copy Assignment Operator called" << std::endl;
-	std::swap(this->ideas, rhs.ideas);
+	this->ideas = rhs.ideas;
 	return (*this);
 }
 

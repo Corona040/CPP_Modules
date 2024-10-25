@@ -5,8 +5,8 @@ Span::Span(unsigned int N): max_size(N) {}
 Span::Span(const Span &s): max_size(s.max_size), numbers(s.numbers) {}
 
 Span &(Span::operator=)(Span s) {
-	std::swap(this->max_size, s.max_size);
-	std::swap(this->numbers, s.numbers);
+	this->max_size = s.max_size;
+	this->numbers = s.numbers;
 	return (*this);
 }
 

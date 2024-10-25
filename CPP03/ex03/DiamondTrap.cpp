@@ -15,10 +15,10 @@ DiamondTrap::DiamondTrap(const DiamondTrap &dt): ClapTrap(dt), ScavTrap(dt), Fla
 
 DiamondTrap &(DiamondTrap::operator=)(DiamondTrap rhs) {
 	std::cout << "DiamondTrap Copy assignment constructor called" << std::endl;
-	std::swap(this->name, rhs.name);
-	std::swap(this->hp, rhs.hp);
-	std::swap(this->ep, rhs.ep);
-	std::swap(this->ad, rhs.ad);
+	this->name = rhs.name;
+	this->hp = rhs.hp;
+	this->ep = rhs.ep;
+	this->ad = rhs.ad;
 	return (*this);
 }
 

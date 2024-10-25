@@ -21,7 +21,14 @@ Character::Character(const Character &c) {
 
 Character &(Character::operator=)(Character c) {
 	std::cout << "Character Copy Assignment operator called" << std::endl;
-	std::swap(this->inventory, c.inventory);
+	for (int i = 0; i < 4; i++) {
+		if (this->inventory[i]) {
+			delete this->inventory[i];
+			this->inventory[i] = 0;
+		}
+		if (c.inventory[i])
+			this ->inventory[i] = c.inventory[i]->clone();
+	}
 	return (*this);
 }
 
