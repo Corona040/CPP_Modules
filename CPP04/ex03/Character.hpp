@@ -6,6 +6,7 @@
 # include "AMateria.hpp"
 # include "Ice.hpp"
 # include "Cure.hpp"
+# include "Drops.hpp"
 
 class Character: public ICharacter {
 	public:
@@ -21,7 +22,8 @@ class Character: public ICharacter {
 	
 	private:
 		std::string	name;
-		AMateria			*inventory[4];
+		AMateria	*inventory[4];
+		Drops		drops;
 };
 
 #endif

@@ -2,7 +2,7 @@ NAME = interface
 
 CFLAG = -Wall -Wextra -Werror -Wshadow -std=c++98 -g
 
-SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp Drops.cpp
 
 all: $(NAME)
 
