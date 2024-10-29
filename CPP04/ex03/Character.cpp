@@ -7,7 +7,7 @@ Character::Character(const std::string n): name(n) {
 	}
 }
 
-Character::Character(const Character &c) {
+Character::Character(const Character &c): name(c.name) {
 	std::cout << "Character Copy Constructor called" << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i]) {
@@ -21,6 +21,7 @@ Character::Character(const Character &c) {
 
 Character &(Character::operator=)(Character c) {
 	std::cout << "Character Copy Assignment operator called" << std::endl;
+	this->name = c.name;
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i]) {
 			delete this->inventory[i];

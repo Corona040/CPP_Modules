@@ -20,7 +20,7 @@ class Character: public ICharacter {
 		void				use(int idx, ICharacter &target);
 	
 	private:
-		const std::string	name;
+		std::string	name;
 		AMateria			*inventory[4];
 };
 

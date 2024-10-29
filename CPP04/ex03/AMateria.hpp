@@ -20,7 +20,7 @@ class AMateria
 		std::string	type;
 	
 	private:
-		AMateria &(operator=)(AMateria m);
+		AMateria &(operator=)(AMateria &m);
 };
 
 #endif
