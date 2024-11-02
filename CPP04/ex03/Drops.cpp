@@ -20,7 +20,7 @@ Drops::~Drops(void) {
 	if (this->drops) {
 		for (int i = 0; i < this->n_drops; i++)
 			delete this->drops[i];
-		delete this->drops;
+		delete[] this->drops;
 	}
 }
 

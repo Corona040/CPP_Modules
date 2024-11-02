@@ -8,18 +8,16 @@ Cat::Cat(void): Animal() {
 
 Cat::Cat(const Cat &a): Animal(a) {
 	std::cout << "Cat Derived Copy Constructor called" << std::endl;
-	const int	ideas_size = 100;
 
 	Animal::type = a.type;
-	this->brain = new Brain();
-	for (int i = 0; i < ideas_size; i++)
-		this->brain->ideas[i] = a.brain->ideas[i];
+	this->brain = new Brain(*a.brain);
 }
 
 Cat &(Cat::operator=)(Cat a) {
 	std::cout << "Cat Derived Copy Assignment Operator called" << std::endl;
+
 	this->type = a.type;
-	this->brain = a.brain;
+	*this->brain = *a.brain;
 	return (*this);
 }
 

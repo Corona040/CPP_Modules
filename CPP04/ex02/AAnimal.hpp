@@ -17,7 +17,7 @@ class AAnimal {
 		std::string type;
 	
 	private:
-		AAnimal &(operator=)(AAnimal a);
+		AAnimal &(operator=)(AAnimal &a);
 };
 
 #endif

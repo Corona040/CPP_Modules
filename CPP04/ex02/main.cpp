@@ -19,5 +19,8 @@ int main()
 	*a1 = *b1;
 	Dog		d;
 
+	delete a1;
+	delete b1;
+	delete (Cat *)c;
 	return 0;
 }

@@ -14,7 +14,10 @@ Brain::Brain(const Brain &b) {
 
 Brain &(Brain::operator=)(Brain rhs) {
 	std::cout << "Brain Copy Assignment Operator called" << std::endl;
-	this->ideas = rhs.ideas;
+	const int	ideas_size = 100;
+
+	for (int i = 0; i  < ideas_size; i++)
+		this->ideas[i] = rhs.ideas[i];
 	return (*this);
 }
 

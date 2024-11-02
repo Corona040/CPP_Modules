@@ -8,17 +8,16 @@ Dog::Dog(void): AAnimal() {
 
 Dog::Dog(const Dog &a): AAnimal(a) {
 	std::cout << "Dog Derived Copy Constructor called" << std::endl;
-	const int	ideas_size = 100;
 
-	AAnimal::type = a.type;
-	for (int i = 0; i < ideas_size; i++)
-		this->brain->ideas[i] = a.brain->ideas[i];
+	this->type = a.type;
+	this->brain = new Brain(*a.brain);
 }
 
 Dog &(Dog::operator=)(Dog a) {
 	std::cout << "Dog Derived Copy Assignment Operator called" << std::endl;
+
 	this->type = a.type;
-	this->brain = a.brain;
+	*this->brain = *a.brain;
 	return (*this);
 }
 
