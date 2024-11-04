@@ -55,8 +55,10 @@ void	Character::equip(AMateria* m) {
 }
 
 void	Character::unequip(int idx) {
-	this->drops.add_drop(inventory[idx]);
-	this->inventory[idx] = 0;
+	if (inventory[idx]) {
+		this->drops.add_drop(inventory[idx]);
+		this->inventory[idx] = 0;
+	}
 }
 
 void	Character::use(int idx, ICharacter& target) {
